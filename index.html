@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xDigital Solutions — Technology Partner for Ambitious Teams</title>
+  <meta name="description" content="Full-stack development, e-commerce solutions, and digital transformation for businesses ready to scale.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --electric: #00fff5;
+      --deep-blue: #0a0e27;
+      --midnight: #1a1d35;
+      --slate: #2d3250;
+      --muted: #7c88a1;
+      --highlight: #ff6b9d;
+      --white: #ffffff;
+      --off-white: #f0f2f7;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--deep-blue);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(0, 255, 245, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 157, 0.06) 0%, transparent 50%);
+      z-index: 0;
+      pointer-events: none;
+      animation: pulseGlow 8s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 14, 39, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 255, 245, 0.1);
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--electric);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .logo::before {
+      content: 'x';
+      color: var(--highlight);
+      margin-right: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+      color: var(--electric);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--electric);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(0, 255, 245, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 245, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 48px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 255, 245, 0.1);
+      border: 1px solid rgba(0, 255, 245, 0.3);
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      color: var(--electric);
+      margin-bottom: 32px;
+      animation: fadeSlideDown 0.8s ease-out;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--electric);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(48px, 7vw, 92px);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--white) 30%, var(--electric) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeSlideUp 1s ease-out 0.2s both;
+    }
+
+    .hero h1 span {
+      color: var(--highlight);
+      background: linear-gradient(135deg, var(--highlight), var(--electric));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+      animation: fadeSlideUp 1s ease-out 0.4s both;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      animation: fadeSlideUp 1s ease-out 0.6s both;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--electric), var(--highlight));
+      color: var(--deep-blue);
+      padding: 16px 40px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 255, 245, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--electric);
+      padding: 16px 40px;
+      border: 2px solid var(--electric);
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 255, 245, 0.1);
+      transform: translateY(-3px);
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== SECTIONS ========== */
+    .section {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 120px 48px;
+    }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      color: var(--electric);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      margin-bottom: 24px;
+      line-height: 1.15;
+    }
+
+    .section-intro {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 64px;
+      line-height: 1.8;
+    }
+
+    /* ========== SERVICES ========== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: rgba(42, 46, 73, 0.4);
+      border: 1px solid rgba(124, 136, 161, 0.2);
+      padding: 40px;
+      border-radius: 16px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--electric), var(--highlight));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card:hover {
+      border-color: var(--electric);
+      transform: translateY(-8px);
+      box-shadow: 0 16px 50px rgba(0, 255, 245, 0.15);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(0, 255, 245, 0.2), rgba(255, 107, 157, 0.2));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    .service-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+
+    .service-desc {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .service-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--electric);
+      font-family: 'Space Mono', monospace;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover .service-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ========== INTERNSHIP ========== */
+    .internship-cta {
+      background: linear-gradient(135deg, rgba(0, 255, 245, 0.05), rgba(255, 107, 157, 0.05));
+      border: 2px solid rgba(0, 255, 245, 0.2);
+      border-radius: 24px;
+      padding: 80px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin: 120px 0;
+    }
+
+    .internship-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 255, 245, 0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .internship-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .internship-badge {
+      display: inline-block;
+      background: rgba(255, 107, 157, 0.2);
+      color: var(--highlight);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .internship-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--white), var(--electric));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .internship-desc {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact-section {
+      background: rgba(42, 46, 73, 0.3);
+      border-top: 1px solid rgba(0, 255, 245, 0.1);
+      padding: 80px 48px;
+    }
+
+    .contact-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .contact-info h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 255, 245, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--electric);
+    }
+
+    .contact-item a {
+      color: var(--electric);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      opacity: 0.7;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--midnight);
+      border-top: 1px solid rgba(0, 255, 245, 0.1);
+      padding: 40px 48px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--electric);
+    }
+
+    /* ========== SERVICE DETAIL PAGE ========== */
+    #service-detail-page {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--deep-blue);
+      z-index: 200;
+      overflow-y: auto;
+      animation: pageSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #service-detail-page.active {
+      display: block;
+    }
+
+    @keyframes pageSlideIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .detail-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(10, 14, 39, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 255, 245, 0.1);
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--electric);
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid rgba(0, 255, 245, 0.3);
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      background: rgba(0, 255, 245, 0.05);
+    }
+
+    .back-btn:hover {
+      background: rgba(0, 255, 245, 0.12);
+      transform: translateX(-3px);
+    }
+
+    .detail-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--electric);
+    }
+
+    .detail-logo::before {
+      content: 'x';
+      color: var(--highlight);
+      margin-right: 2px;
+    }
+
+    .detail-hero {
+      position: relative;
+      padding: 100px 48px 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .detail-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(0, 255, 245, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 245, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, black 30%, transparent);
+      pointer-events: none;
+    }
+
+    .detail-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 255, 245, 0.1);
+      border: 1px solid rgba(0, 255, 245, 0.3);
+      padding: 7px 14px;
+      border-radius: 24px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--electric);
+      margin-bottom: 28px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .detail-icon-large {
+      font-size: 64px;
+      display: block;
+      margin-bottom: 28px;
+      animation: fadeSlideUp 0.6s ease-out both;
+    }
+
+    .detail-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--white) 40%, var(--electric) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeSlideUp 0.6s ease-out 0.1s both;
+    }
+
+    .detail-tagline {
+      font-size: clamp(18px, 2.5vw, 22px);
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.7;
+      margin-bottom: 60px;
+      animation: fadeSlideUp 0.6s ease-out 0.2s both;
+    }
+
+    /* Detail body */
+    .detail-body {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .detail-main {}
+
+    .detail-section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--electric);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      margin-top: 56px;
+    }
+
+    .detail-section-label:first-child {
+      margin-top: 0;
+    }
+
+    .detail-section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    .detail-section-text {
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .detail-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .detail-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 20px;
+      background: rgba(42, 46, 73, 0.4);
+      border: 1px solid rgba(0, 255, 245, 0.1);
+      border-radius: 10px;
+      font-size: 14px;
+      color: var(--off-white);
+      line-height: 1.5;
+      transition: border-color 0.3s ease;
+    }
+
+    .detail-feature:hover {
+      border-color: rgba(0, 255, 245, 0.3);
+    }
+
+    .detail-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .detail-category {
+      border-left: 2px solid rgba(0, 255, 245, 0.2);
+      padding-left: 24px;
+    }
+
+    .detail-category-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .detail-category-label::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--electric);
+      flex-shrink: 0;
+    }
+
+    .detail-feature-dot {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      border-radius: 50%;
+      background: var(--electric);
+      margin-top: 5px;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 8px;
+    }
+
+    .process-step {
+      display: flex;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(0, 255, 245, 0.07);
+    }
+
+    .process-step:last-child {
+      border-bottom: none;
+    }
+
+    .step-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      color: var(--electric);
+      min-width: 40px;
+      padding-top: 3px;
+    }
+
+    .step-content h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .step-content p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* Sidebar CTA */
+    .detail-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, rgba(0, 255, 245, 0.06), rgba(255, 107, 157, 0.06));
+      border: 1px solid rgba(0, 255, 245, 0.25);
+      border-radius: 20px;
+      padding: 40px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(0, 255, 245, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-card-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--highlight);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .cta-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .cta-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .btn-cta-email {
+      display: block;
+      background: linear-gradient(135deg, var(--electric), var(--highlight));
+      color: var(--deep-blue);
+      padding: 16px 24px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Manrope', sans-serif;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-cta-email::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-cta-email:hover::before { left: 100%; }
+
+    .btn-cta-email:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 255, 245, 0.4);
+    }
+
+    .cta-card-secondary {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .cta-card-secondary:hover {
+      color: var(--electric);
+    }
+
+    .cta-card-divider {
+      border: none;
+      border-top: 1px solid rgba(0, 255, 245, 0.1);
+      margin: 28px 0;
+    }
+
+    .cta-trust-points {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cta-trust-point {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .cta-trust-point span:first-child {
+      color: var(--electric);
+      font-size: 16px;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .detail-body {
+        grid-template-columns: 1fr;
+      }
+      .detail-sidebar {
+        position: static;
+      }
+    }
+
+    /* ========== HAMBURGER ========== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: 1px solid rgba(0, 255, 245, 0.3);
+      border-radius: 6px;
+      padding: 10px 12px;
+      cursor: pointer;
+      z-index: 110;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--electric);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+
+      .hamburger { display: flex; }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 14, 39, 0.98);
+        backdrop-filter: blur(24px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        z-index: 105;
+        padding: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 255, 245, 0.06);
+      }
+
+      .nav-links li:first-child {
+        border-top: 1px solid rgba(0, 255, 245, 0.06);
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 24px 0;
+        font-size: 22px;
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+        color: var(--white);
+        letter-spacing: -0.01em;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:active {
+        color: var(--electric);
+      }
+
+      .nav-links a::after { display: none; }
+
+      .hero-content { padding: 60px 24px; }
+      .section { padding: 80px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-content { flex-direction: column; gap: 24px; }
+      .internship-cta { padding: 60px 32px; margin: 80px 0; }
+      .detail-header { padding: 16px 24px; }
+      .detail-hero { padding: 60px 24px 40px; }
+      .detail-body { padding: 0 24px 60px; }
+      .detail-features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MAIN SITE -->
+  <div id="main-site">
+
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <a class="logo" onclick="scrollToTop()" style="cursor:pointer;">DIGITAL SOLUTIONS</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a onclick="scrollToSection('about')">About</a></li>
+          <li><a onclick="scrollToSection('services')">Services</a></li>
+          <li><a onclick="scrollToSection('internship')">Internship</a></li>
+          <li><a onclick="scrollToSection('contact')">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span>Platform to Watch</span>
+        </div>
+        <h1>
+          Smart IT.<br>
+          Real <span>Results.</span>
+        </h1>
+        <p class="hero-subtitle">
+          A solutions-oriented IT consultancy helping businesses unlock practical, modern technology that genuinely supports growth. From digital storefronts to full modernization—we design and deploy technology that fits your reality.
+        </p>
+        <div class="hero-cta-group">
+          <a onclick="scrollToSection('services')" class="btn-primary" style="cursor:pointer;">Explore What We Do</a>
+          <a onclick="scrollToSection('contact')" class="btn-secondary" style="cursor:pointer;">Let's Talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-label">About xDigitalSolutions</div>
+      <h2 class="section-title">Built as a Platform to Watch</h2>
+      <p class="section-intro">
+        xDigitalSolutions was created to give businesses a practical way to access serious technology thinking without unnecessary complexity. Whether you are launching a new venture or modernizing a mature operation, we align IT decisions with business realities—budget, timelines, and long-term vision.
+      </p>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="section-label">What We Help You Build</div>
+      <h2 class="section-title">Services Designed for Growth</h2>
+      <p class="section-intro">
+        Our services are modular—you can start small or design a full, end-to-end digital foundation. Each engagement is tailored to your context, with a clear focus on measurable outcomes.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card" onclick="openService('fullstack')">
+          <div class="service-icon">⚡</div>
+          <h3 class="service-title">Full-Stack Development</h3>
+          <p class="service-desc">
+            React, React Native, PHP, WordPress—we build modern, fast, and reliable web applications from the ground up.
+          </p>
+          <span class="service-arrow">Learn more →</span>
+        </div>
+
+        <div class="service-card" onclick="openService('ecommerce')">
+          <div class="service-icon">🛒</div>
+          <h3 class="service-title">E-Commerce Solutions</h3>
+          <p class="service-desc">
+            WooCommerce stores with variable products, payment integration (Square, Paystack), and shipping logic that works.
+          </p>
+          <span class="service-arrow">Learn more →</span>
+        </div>
+
+        <div class="service-card" onclick="openService('cloud')">
+          <div class="service-icon">☁️</div>
+          <h3 class="service-title">Cloud & Infrastructure</h3>
+          <p class="service-desc">
+            Design and deploy secure, scalable cloud environments and foundational systems ready to grow with your business.
+          </p>
+          <span class="service-arrow">Learn more →</span>
+        </div>
+
+        <div class="service-card" onclick="openService('integration')">
+          <div class="service-icon">🔗</div>
+          <h3 class="service-title">Systems Integration</h3>
+          <p class="service-desc">
+            Connect your existing tools so data flows cleanly between them—Dolibarr, REST APIs, and custom integrations.
+          </p>
+          <span class="service-arrow">Learn more →</span>
+        </div>
+
+        <div class="service-card" onclick="openService('automation')">
+          <div class="service-icon">📊</div>
+          <h3 class="service-title">Business Process Automation</h3>
+          <p class="service-desc">
+            Replace manual, repetitive work with streamlined digital workflows that save time and reduce errors across your teams.
+          </p>
+          <span class="service-arrow">Learn more →</span>
+        </div>
+
+        <div class="service-card" onclick="openService('webapps')">
+          <div class="service-icon">🎨</div>
+          <h3 class="service-title">Websites & Web Applications</h3>
+          <p class="service-desc">
+            Build modern, fast, and intuitive web experiences—from landing pages to more complex internal tools and portals.
+          </p>
+          <span class="service-arrow">Learn more →</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERNSHIP CTA -->
+    <section class="section">
+      <div class="internship-cta" id="internship">
+        <div class="internship-content">
+          <span class="internship-badge">NOW ACCEPTING APPLICATIONS</span>
+          <h2 class="internship-title">Join Our Digital Solutions Innovators' Cohort</h2>
+          <p class="internship-desc">
+            Next Digital Solutions invites applications for its inaugural research-driven internship programme exploring AI regulation and software law in Nigeria. Be part of Cohort 1 and shape Nigeria's digital future.
+          </p>
+          <a href="nds_internship_call.html" class="btn-primary">View Internship Details →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Let's Talk</div>
+          <h3>Bring Your Next Digital Move to Life</h3>
+          <p style="color: var(--muted); margin-top: 16px; line-height: 1.7;">
+            If you are exploring how to use technology more strategically in your business, xDigitalSolutions is ready to help you think, plan, and build. Share your challenge, and we will outline a clear path forward.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-item-icon">📧</div>
+              <div>
+                <strong>Email:</strong>
+                <a href="mailto:info@xdigitalsolutions.com">info@xdigitalsolutions.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <strong>Phone:</strong>
+                <a href="tel:+2347013892929">+234 701 389 2929</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">🌍</div>
+              <div>
+                <strong>Location:</strong>
+                Emeka Anyaoku Street, Garki, Area 11, Abuja, Nigeria
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="section-label">Quick Start</div>
+          <h3>Email Us Your Project Idea</h3>
+          <p style="color: var(--muted); margin-top: 16px; line-height: 1.7; margin-bottom: 24px;">
+            Use the subject line format:<br>
+            <strong style="color: var(--electric);">"[Project Type] — [Your Name/Company]"</strong>
+          </p>
+          <a href="mailto:info@xdigitalsolutions.com?subject=Project%20Inquiry%20%E2%80%94%20[Your%20Name%2FCompany]&body=Hi%20xDigitalSolutions%20team%2C%0A%0AI'd%20like%20to%20discuss%20a%20project%20with%20you.%0A%0AProject%20Type%3A%20%0ABudget%20Range%3A%20%0ATimeline%3A%20%0ADescription%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you." class="btn-primary">
+            Email Us Your Project Idea ✉️
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <p class="footer-text">© 2026 xDigitalSolutions. All rights reserved. Est. 2018</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="mailto:info@xdigitalsolutions.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /#main-site -->
+
+
+  <!-- ========== SERVICE DETAIL OVERLAY ========== -->
+  <div id="service-detail-page">
+
+    <div class="detail-header">
+      <button class="back-btn" onclick="closeService()">← Back to Services</button>
+      <div class="detail-logo">DIGITAL SOLUTIONS</div>
+    </div>
+
+    <div class="detail-hero">
+      <div class="detail-tag" id="detail-tag">SERVICE</div>
+      <span class="detail-icon-large" id="detail-icon">⚡</span>
+      <h1 class="detail-title" id="detail-title">Service Title</h1>
+      <p class="detail-tagline" id="detail-tagline">Tagline here.</p>
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-main" id="detail-main">
+        <!-- injected dynamically -->
+      </div>
+
+      <div class="detail-sidebar">
+        <div class="cta-card">
+          <div class="cta-card-label">Ready to Get Started?</div>
+          <h3 id="cta-title">Let's Build Something Great</h3>
+          <p id="cta-desc">Tell us about your project and we'll outline a clear path forward — no fluff, no unnecessary complexity.</p>
+          <a id="cta-email-btn" href="#" class="btn-cta-email">✉️ &nbsp;Send Us an Email</a>
+          <a href="tel:+2347013892929" class="cta-card-secondary">Or call +234 701 389 2929</a>
+
+          <hr class="cta-card-divider">
+
+          <div class="cta-trust-points">
+            <div class="cta-trust-point">
+              <span>✓</span>
+              <span>Response within 24 hours</span>
+            </div>
+            <div class="cta-trust-point">
+              <span>✓</span>
+              <span>Free initial consultation</span>
+            </div>
+            <div class="cta-trust-point">
+              <span>✓</span>
+              <span>Tailored to your budget & timeline</span>
+            </div>
+            <div class="cta-trust-point">
+              <span>✓</span>
+              <span>4+ years of proven delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /#service-detail-page -->
+
+
+  <script>
+    // ─── Service data ───────────────────────────────────────────────────
+    const services = {
+
+      fullstack: {
+        icon: '⚡',
+        tag: 'Development',
+        title: 'Full-Stack Development',
+        tagline: 'End-to-end software built the right way — from database schema to pixel-perfect UI, on web and mobile.',
+        overview: 'Full-stack development means we own the entire product — not just the front or back end in isolation. We handle architecture decisions, database design, server logic, API contracts, UI implementation, authentication, testing, and deployment. Whether you\'re starting from a blank canvas or inheriting an existing codebase, we build systems that are maintainable, performant, and genuinely fit for purpose.',
+        categories: [
+          {
+            label: 'Frontend Development',
+            items: [
+              'React.js (SPA, SSR with Next.js)',
+              'React Native & Expo (iOS + Android)',
+              'HTML5 / CSS3 / Vanilla JS',
+              'Component libraries & design systems',
+              'Responsive & mobile-first layouts',
+              'Animations & micro-interactions',
+              'State management (Redux, Zustand, Context)',
+              'PWA (Progressive Web Apps)',
+            ]
+          },
+          {
+            label: 'Backend Development',
+            items: [
+              'PHP (Laravel, CodeIgniter, custom)',
+              'Node.js & Express / Fastify',
+              'REST API design & development',
+              'GraphQL API development',
+              'Authentication (JWT, OAuth2, sessions)',
+              'Role-based access control (RBAC)',
+              'Background jobs & task queues',
+              'File uploads & media management',
+            ]
+          },
+          {
+            label: 'Database & Storage',
+            items: [
+              'MySQL & PostgreSQL schema design',
+              'MongoDB & NoSQL data modelling',
+              'Database migrations & versioning',
+              'Query optimisation & indexing',
+              'Caching layers (Redis, Memcached)',
+              'Full-text search integration',
+              'Cloud storage (S3-compatible)',
+              'Backup & restore strategies',
+            ]
+          },
+          {
+            label: 'CMS & Content Platforms',
+            items: [
+              'WordPress custom theme development',
+              'WordPress custom plugin development',
+              'Headless WordPress (WP + React frontend)',
+              'Dolibarr ERP module development',
+              'Multi-user & multi-role CMS setups',
+              'Content modelling & taxonomy design',
+              'Media libraries & asset management',
+              'SEO-ready content architecture',
+            ]
+          },
+          {
+            label: 'Code Quality & Delivery',
+            items: [
+              'Code reviews & refactoring',
+              'Unit & integration testing',
+              'CI/CD pipeline integration',
+              'Documentation & API specs',
+              'Performance profiling & optimisation',
+              'Security audit & hardening',
+              'Legacy codebase modernisation',
+              'Tech debt reduction',
+            ]
+          },
+        ],
+        process: [
+          { title: 'Discovery & Requirements', desc: 'We map user journeys, define data models, and agree on a realistic feature scope and delivery timeline before writing a single line of code.' },
+          { title: 'Architecture & Tech Selection', desc: 'We propose and document the technical stack — frontend framework, backend language, database, hosting — with clear rationale for every decision.' },
+          { title: 'Design & Prototyping', desc: 'We wireframe key user flows and validate them with you before committing to production implementation.' },
+          { title: 'Iterative Development', desc: 'We build in focused sprints with working demos at each checkpoint, so you can see progress and give feedback continuously.' },
+          { title: 'QA & Testing', desc: 'Cross-browser, cross-device, and edge-case testing. We test what we build before it ever lands in front of users.' },
+          { title: 'Deployment & Handover', desc: 'We deploy to your preferred environment, write handover documentation, and support you through the post-launch period.' },
+        ],
+        emailSubject: 'Full-Stack Development Inquiry',
+        emailBody: 'Hi xDigitalSolutions team,\n\nI\'m interested in your Full-Stack Development service.\n\nProject overview:\n\nTarget platform (web / mobile / both):\n\nTech preferences or existing stack:\n\nTimeline:\n\nBudget range:\n\nLooking forward to hearing from you.',
+      },
+
+      ecommerce: {
+        icon: '🛒',
+        tag: 'E-Commerce',
+        title: 'E-Commerce Solutions',
+        tagline: 'Online stores built to convert — with the product logic, payment infrastructure, and customer experience your business needs.',
+        overview: 'A good e-commerce build is about far more than putting products on a page. It requires thoughtful product architecture, reliable payment processing, smart inventory logic, clear checkout flows, and a backend your team can actually manage. We handle all of it — from initial store setup through to post-launch support — so you can focus on selling.',
+        categories: [
+          {
+            label: 'Store Setup & Platform',
+            items: [
+              'WooCommerce setup & full configuration',
+              'Custom WordPress theme for e-commerce',
+              'Storefront design & branding',
+              'Category & product taxonomy structure',
+              'Multi-currency & multi-language support',
+              'Mobile-optimised shopping experience',
+              'Store migration from other platforms',
+              'Staging environment & go-live management',
+            ]
+          },
+          {
+            label: 'Product Catalogue Management',
+            items: [
+              'Simple, variable & grouped products',
+              'Product attributes & variations (size, colour, etc.)',
+              'Bulk product import (CSV / API)',
+              'Product filtering & search',
+              'Upsells, cross-sells & related products',
+              'Digital & downloadable products',
+              'Subscription & recurring products',
+              'Product bundles & kits',
+            ]
+          },
+          {
+            label: 'Payments & Checkout',
+            items: [
+              'Paystack integration (cards, USSD, bank transfer)',
+              'Square payment gateway integration',
+              'Flutterwave & Stripe setup',
+              'Pay-on-delivery & bank transfer options',
+              'Custom checkout field configuration',
+              'One-page checkout optimisation',
+              'Cart abandonment recovery',
+              'Secure SSL & PCI compliance considerations',
+            ]
+          },
+          {
+            label: 'Inventory & Fulfilment',
+            items: [
+              'Stock tracking & low-stock alerts',
+              'Backorder & pre-order management',
+              'Warehouse / location-based stock',
+              'Shipping zones, rates & carrier integration',
+              'Weight & dimension-based shipping rules',
+              'Free shipping thresholds & coupon logic',
+              'Order tracking & status updates',
+              'Returns & refund workflow management',
+            ]
+          },
+          {
+            label: 'Customer Experience & Marketing',
+            items: [
+              'Customer account portals',
+              'Order history & re-order functionality',
+              'Wishlist & saved items',
+              'Discount codes & promotional pricing',
+              'Loyalty & rewards programme integration',
+              'Product reviews & ratings',
+              'Email receipts & order notifications',
+              'Abandoned cart email sequences',
+            ]
+          },
+          {
+            label: 'Analytics & Operations',
+            items: [
+              'Sales dashboards & reporting',
+              'Google Analytics / Meta Pixel integration',
+              'Conversion funnel tracking',
+              'Revenue & profit reporting',
+              'Staff access roles & permissions',
+              'Automated tax calculation',
+              'Invoice & receipt generation',
+              'Accounting system sync (Dolibarr, QuickBooks)',
+            ]
+          },
+        ],
+        process: [
+          { title: 'Store Strategy & Planning', desc: 'We review your catalogue, pricing model, payment preferences, and fulfilment workflow to design a store that fits your operations from day one.' },
+          { title: 'Design & Brand Application', desc: 'We apply your brand to a store design that feels intentional and trustworthy — not a generic template.' },
+          { title: 'Product & Payment Configuration', desc: 'We configure every product, variant, payment gateway, shipping rule, and tax setting with precision.' },
+          { title: 'Integration & Automation', desc: 'We connect your store to email, accounting, inventory, or analytics tools as required.' },
+          { title: 'Testing & Purchase Simulations', desc: 'We run full end-to-end purchase flows — including edge cases like failed payments, out-of-stock, and refunds — before going live.' },
+          { title: 'Launch, Training & Support', desc: 'We manage the launch, train your team on day-to-day operations, and remain available post-launch.' },
+        ],
+        emailSubject: 'E-Commerce Project Inquiry',
+        emailBody: 'Hi xDigitalSolutions team,\n\nI\'m interested in your E-Commerce Solutions service.\n\nBusiness / product type:\n\nEstimated number of products:\n\nPreferred payment methods:\n\nDo you have an existing store to migrate or is this new?\n\nTimeline:\n\nBudget range:\n\nLooking forward to hearing from you.',
+      },
+
+      cloud: {
+        icon: '☁️',
+        tag: 'Infrastructure',
+        title: 'Cloud & Infrastructure',
+        tagline: 'Secure, stable, and scalable infrastructure — built right the first time, so it never becomes the bottleneck.',
+        overview: 'Most businesses don\'t need a complex cloud setup — they need a reliable one. We design and deploy environments that are appropriately sized for where you are now, structured to grow as your needs evolve, and hardened against the threats that matter. Whether you\'re setting up from scratch or untangling an existing environment, we bring order, security, and clarity.',
+        categories: [
+          {
+            label: 'Hosting & Server Setup',
+            items: [
+              'VPS provisioning (DigitalOcean, Linode, Hetzner)',
+              'Shared hosting setup & hardening (cPanel/Namecheap)',
+              'Cloud server setup (AWS EC2, Google Cloud, Azure)',
+              'LAMP / LEMP stack installation & tuning',
+              'Node.js & PHP-FPM server configuration',
+              'Containerised environments (Docker)',
+              'Multi-server & multi-region setups',
+              'Dedicated server configuration',
+            ]
+          },
+          {
+            label: 'Domain, DNS & CDN',
+            items: [
+              'Domain registration & transfer management',
+              'DNS zone configuration (A, CNAME, MX, TXT records)',
+              'Cloudflare setup & proxy configuration',
+              'CDN integration for static assets',
+              'SSL/TLS certificate provisioning (Let\'s Encrypt)',
+              'Subdomain & environment routing',
+              'Email DNS (SPF, DKIM, DMARC setup)',
+              'Custom nameserver configuration',
+            ]
+          },
+          {
+            label: 'Security & Hardening',
+            items: [
+              'Firewall rules & UFW/iptables configuration',
+              'SSH key-based access & hardening',
+              'Fail2ban & intrusion prevention',
+              'Web Application Firewall (WAF) setup',
+              'Malware scanning & remediation',
+              'SEO hack & injection cleanup',
+              'Security audit & vulnerability review',
+              'HTTPS enforcement & HSTS',
+            ]
+          },
+          {
+            label: 'Databases & Storage',
+            items: [
+              'MySQL / PostgreSQL installation & config',
+              'Remote database access & user management',
+              'Automated daily/weekly backup schedules',
+              'Offsite backup storage (S3, Cloudflare R2)',
+              'Database replication & failover',
+              'Object storage setup & CDN integration',
+              'File system organisation & permissions',
+              'Disaster recovery planning',
+            ]
+          },
+          {
+            label: 'Performance & Reliability',
+            items: [
+              'Nginx/Apache performance tuning',
+              'PHP opcache & query cache configuration',
+              'Redis / Memcached caching layers',
+              'Load balancer configuration',
+              'Auto-scaling policies',
+              'Uptime monitoring & alerting (UptimeRobot, etc.)',
+              'Log aggregation & error tracking',
+              'Response time & Core Web Vitals auditing',
+            ]
+          },
+          {
+            label: 'DevOps & Deployment',
+            items: [
+              'CI/CD pipeline setup (GitHub Actions, etc.)',
+              'Staging & production environment separation',
+              'Automated deployment scripts',
+              'Environment variable & secrets management',
+              'Zero-downtime deployment strategies',
+              'Cron job management',
+              'Process management (PM2, Supervisor)',
+              'Infrastructure documentation & runbooks',
+            ]
+          },
+        ],
+        process: [
+          { title: 'Infrastructure Audit', desc: 'We review your current setup or requirements from scratch — identifying risks, gaps, and cost optimisation opportunities before touching anything.' },
+          { title: 'Architecture Design', desc: 'We produce a clear environment diagram with hosting provider recommendations and a cost estimate before any provisioning begins.' },
+          { title: 'Provisioning & Configuration', desc: 'We stand up and configure every layer — servers, databases, DNS, SSL, firewalls, and caching.' },
+          { title: 'Security Hardening & Backups', desc: 'Every environment is hardened, monitored, and backed up before we hand it over — not as an afterthought.' },
+          { title: 'Deployment Pipeline Setup', desc: 'We connect your code repository to automated deployment workflows so pushing updates is reliable and repeatable.' },
+          { title: 'Handover & Documentation', desc: 'We produce full runbooks — how to access, update, backup, and recover — so your team is never flying blind.' },
+        ],
+        emailSubject: 'Cloud & Infrastructure Inquiry',
+        emailBody: 'Hi xDigitalSolutions team,\n\nI\'m interested in your Cloud & Infrastructure service.\n\nCurrent hosting situation:\n\nMain goals (new setup / migration / security / performance):\n\nApproximate traffic / scale:\n\nTimeline:\n\nBudget range:\n\nLooking forward to hearing from you.',
+      },
+
+      integration: {
+        icon: '🔗',
+        tag: 'Integration',
+        title: 'Systems Integration',
+        tagline: 'Your tools should share data, not create it twice. We build the connections that make your stack behave like one system.',
+        overview: 'Every disconnected tool in your business creates friction — double data entry, manual exports, sync errors, and delayed decisions. We map exactly where information needs to flow across your stack and build the integrations that make it happen automatically. From two-system point connections to full middleware orchestration layers, we cover the full scope of integration work.',
+        categories: [
+          {
+            label: 'API Development & Integration',
+            items: [
+              'REST API design, build & documentation',
+              'GraphQL API development',
+              'Third-party API consumption & wrapping',
+              'OAuth2 / API key authentication flows',
+              'API versioning & deprecation management',
+              'Rate limiting & retry logic',
+              'API gateway setup & routing',
+              'Swagger / OpenAPI spec generation',
+            ]
+          },
+          {
+            label: 'Business Tool Connections',
+            items: [
+              'CRM integrations (HubSpot, Zoho, custom)',
+              'ERP integrations (Dolibarr, Odoo, SAP)',
+              'Accounting system sync (QuickBooks, Wave)',
+              'HR & payroll system connections',
+              'Email marketing platform integration (Mailchimp, Brevo)',
+              'Helpdesk & ticketing system links',
+              'Calendar & scheduling tool sync',
+              'Communication platform hooks (Slack, WhatsApp Business)',
+            ]
+          },
+          {
+            label: 'E-Commerce & Payment Integrations',
+            items: [
+              'WooCommerce ↔ inventory/ERP sync',
+              'Payment gateway reconciliation pipelines',
+              'Order data push to fulfilment systems',
+              'Product catalogue sync across channels',
+              'Shipping carrier API integration',
+              'POS ↔ online store stock sync',
+              'Marketplace integrations (Jumia, Konga, etc.)',
+              'Subscription billing system connections',
+            ]
+          },
+          {
+            label: 'Data Pipelines & Sync',
+            items: [
+              'Real-time data sync via webhooks',
+              'Scheduled batch data transfer (ETL)',
+              'Database-to-database migration & sync',
+              'Data normalisation & transformation',
+              'Bi-directional sync with conflict resolution',
+              'Event-driven data pipelines',
+              'Flat file (CSV/Excel) import/export automation',
+              'Cross-platform reporting data aggregation',
+            ]
+          },
+          {
+            label: 'Legacy & Custom Systems',
+            items: [
+              'Legacy system API wrapping',
+              'SOAP / XML web service integration',
+              'Screen scraping & structured data extraction',
+              'Custom middleware layer development',
+              'Protocol translation (FTP, SFTP, SMTP triggers)',
+              'Vendor-specific integration (custom formats)',
+              'Monolith-to-service data bridging',
+              'Gradual migration strategies',
+            ]
+          },
+        ],
+        process: [
+          { title: 'Systems Mapping', desc: 'We diagram every tool in your stack and mark where data enters, transforms, and needs to land — surfacing every manual step in between.' },
+          { title: 'Integration Architecture', desc: 'We design the integration approach — direct API calls, middleware, webhooks, or batch pipelines — with error handling and monitoring built in from the start.' },
+          { title: 'Development & Staging Tests', desc: 'We build each integration against staging environments and validate data integrity thoroughly before touching production.' },
+          { title: 'Production Rollout', desc: 'We deploy carefully — with logging, alerting, and rollback plans in place — and monitor closely in the first hours post-launch.' },
+          { title: 'Documentation & Ownership Transfer', desc: 'We document every endpoint, credential, data transformation, and failure scenario so your team can own and extend the integrations confidently.' },
+        ],
+        emailSubject: 'Systems Integration Inquiry',
+        emailBody: 'Hi xDigitalSolutions team,\n\nI\'m interested in your Systems Integration service.\n\nTools / platforms to connect:\n\nData that needs to flow (e.g. orders → accounting):\n\nCurrent workaround being used:\n\nTimeline:\n\nBudget range:\n\nLooking forward to hearing from you.',
+      },
+
+      automation: {
+        icon: '📊',
+        tag: 'Automation',
+        title: 'Business Process Automation',
+        tagline: 'Every hour your team spends on repetitive tasks is an hour not spent on what actually grows your business.',
+        overview: 'Business process automation is about finding the tasks your team does over and over — data entry, report generation, follow-up emails, file organisation, approval chains — and replacing them with reliable digital workflows. We analyse your operations, identify the highest-impact automation opportunities, and build the systems that handle the work automatically. The result is fewer errors, faster turnaround, and a team that spends its time on decisions, not drudgery.',
+        categories: [
+          {
+            label: 'Workflow Automation',
+            items: [
+              'End-to-end workflow mapping & analysis',
+              'Multi-step approval flow automation',
+              'Task assignment & routing rules',
+              'Status update & notification triggers',
+              'Conditional logic & branching workflows',
+              'SLA / deadline monitoring & escalation',
+              'Cross-department process coordination',
+              'Form submission → workflow initiation',
+            ]
+          },
+          {
+            label: 'Data & Reporting Automation',
+            items: [
+              'Scheduled report generation & distribution',
+              'Dashboard auto-refresh & data pipelines',
+              'Data entry automation from source documents',
+              'Spreadsheet population from live data',
+              'KPI tracking & alert thresholds',
+              'Consolidated reporting across systems',
+              'Invoice & purchase order auto-generation',
+              'Reconciliation & variance flagging',
+            ]
+          },
+          {
+            label: 'Communication Automation',
+            items: [
+              'Automated email sequences (onboarding, follow-up)',
+              'SMS / WhatsApp notification triggers',
+              'Internal Slack / Teams alert routing',
+              'Customer-facing status update emails',
+              'Meeting scheduling & reminder automation',
+              'Contract & proposal dispatch workflows',
+              'Feedback & survey request triggers',
+              'Renewal & expiry notification systems',
+            ]
+          },
+          {
+            label: 'Document & File Automation',
+            items: [
+              'Automated document generation (PDFs, Word)',
+              'Contract population from form/CRM data',
+              'File naming, sorting & archiving rules',
+              'Cloud folder structure auto-organisation',
+              'Document approval & sign-off workflows',
+              'Receipt & invoice parsing pipelines',
+              'Bulk file conversion & processing',
+              'Digital signature workflow integration',
+            ]
+          },
+          {
+            label: 'Operations & Back-Office',
+            items: [
+              'Inventory reorder trigger automation',
+              'New client/lead onboarding workflows',
+              'Payroll data preparation automation',
+              'HR leave request & approval flows',
+              'IT request ticketing & routing',
+              'Supplier order & follow-up automation',
+              'Customer support triage & assignment',
+              'Compliance checklist & audit trail automation',
+            ]
+          },
+          {
+            label: 'Scripting & Scheduled Tasks',
+            items: [
+              'Custom Python / Node.js automation scripts',
+              'Cron job setup & management',
+              'Batch processing pipelines',
+              'Headless browser automation (scraping, testing)',
+              'FTP / SFTP automated file transfers',
+              'Database maintenance & cleanup scripts',
+              'Log monitoring & anomaly detection',
+              'API polling & event-driven triggers',
+            ]
+          },
+        ],
+        process: [
+          { title: 'Process Discovery', desc: 'We shadow your workflows (or review documentation) to identify every manual, repetitive, or error-prone step across your operations.' },
+          { title: 'Prioritisation & ROI Scoping', desc: 'We rank automation opportunities by time saved, error reduction, and implementation effort — so you know exactly what to tackle first.' },
+          { title: 'Automation Blueprint', desc: 'We produce a clear spec for each workflow: triggers, logic, outputs, error handling, and success metrics.' },
+          { title: 'Build & Test', desc: 'We build each automation incrementally, testing with real data in staging before deploying to production.' },
+          { title: 'Deployment & Team Enablement', desc: 'We deploy, monitor the first runs live, and train your team to understand, adjust, and extend the automations.' },
+          { title: 'Maintenance & Iteration', desc: 'Business processes change — we offer ongoing support to keep automations accurate as your operations evolve.' },
+        ],
+        emailSubject: 'Business Process Automation Inquiry',
+        emailBody: 'Hi xDigitalSolutions team,\n\nI\'m interested in your Business Process Automation service.\n\nProcess or task to automate:\n\nTools / platforms currently involved:\n\nEstimated time currently spent on this per week:\n\nTimeline:\n\nBudget range:\n\nLooking forward to hearing from you.',
+      },
+
+      webapps: {
+        icon: '🎨',
+        tag: 'Web & Apps',
+        title: 'Websites & Web Applications',
+        tagline: 'From a brand presence that makes an impression to a complex web application your team and clients rely on daily.',
+        overview: 'Web and app development covers an enormous range — from a clean, fast marketing site that generates leads, to a multi-role internal platform managing real business operations. We work across the full spectrum. Every project is approached with the same discipline: understanding who uses it, what they need to do, and what "done well" looks like for your specific context.',
+        categories: [
+          {
+            label: 'Marketing & Corporate Websites',
+            items: [
+              'Brand & corporate websites',
+              'Product & service landing pages',
+              'Portfolio & showcase sites',
+              'Event & campaign microsites',
+              'Multi-page company websites',
+              'Non-profit & NGO websites',
+              'Professional services firm sites',
+              'Directory & listing websites',
+            ]
+          },
+          {
+            label: 'Web Application Development',
+            items: [
+              'SaaS product development',
+              'Client portals & self-service dashboards',
+              'Internal operations tools & admin panels',
+              'Multi-role platforms (admin / staff / client)',
+              'Booking & reservation systems',
+              'Project management & task tracking tools',
+              'Survey & form-driven workflow apps',
+              'Membership & subscription platforms',
+            ]
+          },
+          {
+            label: 'CMS & Content Architecture',
+            items: [
+              'WordPress CMS builds (custom theme + plugins)',
+              'Headless CMS implementations',
+              'Blog, news & editorial platforms',
+              'Knowledge base & documentation sites',
+              'Multi-author publishing platforms',
+              'Content scheduling & workflow systems',
+              'Media-rich sites (video, galleries, podcasts)',
+              'Multilingual & localised content setups',
+            ]
+          },
+          {
+            label: 'UI/UX Design',
+            items: [
+              'User research & persona definition',
+              'Information architecture & sitemap design',
+              'Wireframing & low-fidelity prototyping',
+              'High-fidelity UI design (Figma)',
+              'Interactive prototypes for stakeholder review',
+              'Design system & component library creation',
+              'Accessibility-first design (WCAG compliance)',
+              'Responsive design across all breakpoints',
+            ]
+          },
+          {
+            label: 'Performance, SEO & Quality',
+            items: [
+              'Core Web Vitals optimisation (LCP, FID, CLS)',
+              'Page speed & asset optimisation',
+              'On-page SEO setup (meta, schema, sitemap)',
+              'Technical SEO audit & remediation',
+              'Cross-browser compatibility testing',
+              'Cross-device & responsive QA',
+              'Accessibility audit & remediation',
+              'Security headers & best-practice hardening',
+            ]
+          },
+          {
+            label: 'Ongoing Management & Growth',
+            items: [
+              'Content updates & site maintenance retainers',
+              'Feature additions & scope extensions',
+              'A/B testing & conversion optimisation',
+              'Analytics setup & reporting (GA4, Hotjar)',
+              'Uptime monitoring & incident response',
+              'Plugin & dependency updates',
+              'Backup management & disaster recovery',
+              'Performance monitoring & continuous improvement',
+            ]
+          },
+        ],
+        process: [
+          { title: 'Discovery & Goal Setting', desc: 'We define the primary audience, key user actions, and success metrics upfront — so every design and development decision points at the same target.' },
+          { title: 'Information Architecture', desc: 'We structure the site or app logic — navigation, page hierarchy, content relationships, and user flows — before touching visual design.' },
+          { title: 'UI Design & Prototype', desc: 'We produce high-fidelity designs and interactive prototypes for your review and sign-off before any production code is written.' },
+          { title: 'Development', desc: 'We build with clean, semantic, and maintainable code — optimised for speed, SEO, and accessibility from the start.' },
+          { title: 'QA, Performance & SEO', desc: 'We test across devices and browsers, audit Core Web Vitals, and validate on-page SEO before any launch conversation happens.' },
+          { title: 'Launch & Post-Launch Support', desc: 'We manage deployment, submit sitemaps, and monitor the first days post-launch — available to resolve anything that surfaces.' },
+        ],
+        emailSubject: 'Website / Web Application Inquiry',
+        emailBody: 'Hi xDigitalSolutions team,\n\nI\'m interested in your Websites & Web Applications service.\n\nType of project (marketing site / web app / portal / other):\n\nKey features or pages needed:\n\nDo you have existing branding / design assets?\n\nTimeline:\n\nBudget range:\n\nLooking forward to hearing from you.',
+      },
+    };
+
+    // ─── Navigation helpers ────────────────────────────────────────────
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      const btn = document.getElementById('hamburger');
+      nav.classList.toggle('open');
+      btn.classList.toggle('open');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('nav-links');
+      const btn = document.getElementById('hamburger');
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function scrollToSection(id) {
+      closeMenu();
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToTop() {
+      closeMenu();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ─── Service detail open/close ─────────────────────────────────────
+    function openService(key) {
+      const s = services[key];
+      if (!s) return;
+
+      // Populate header/hero
+      document.getElementById('detail-tag').textContent = s.tag.toUpperCase();
+      document.getElementById('detail-icon').textContent = s.icon;
+      document.getElementById('detail-title').textContent = s.title;
+      document.getElementById('detail-tagline').textContent = s.tagline;
+
+      // Populate CTA sidebar
+      document.getElementById('cta-title').textContent = `Start a ${s.title} Project`;
+      document.getElementById('cta-desc').textContent = `Tell us what you're building and we'll put together a clear proposal — typically within 24 hours.`;
+
+      const emailHref = `mailto:info@xdigitalsolutions.com?subject=${encodeURIComponent(s.emailSubject)}&body=${encodeURIComponent(s.emailBody)}`;
+      document.getElementById('cta-email-btn').href = emailHref;
+
+      // Build main content
+      const categoriesHTML = s.categories.map(cat => {
+        const itemsHTML = cat.items.map(item =>
+          '<div class="detail-feature"><span class="detail-feature-dot"></span><span>' + item + '</span></div>'
+        ).join('');
+        return '<div class="detail-category"><div class="detail-category-label">' + cat.label + '</div><div class="detail-features">' + itemsHTML + '</div></div>';
+      }).join('');
+
+      const processHTML = s.process.map((step, i) =>
+        '<div class="process-step"><div class="step-num">0' + (i+1) + '</div><div class="step-content"><h4>' + step.title + '</h4><p>' + step.desc + '</p></div></div>'
+      ).join('');
+
+      document.getElementById('detail-main').innerHTML =
+        '<div class="detail-section-label">Overview</div>' +
+        '<div class="detail-section-title">What We Do</div>' +
+        '<p class="detail-section-text">' + s.overview + '</p>' +
+        '<div class="detail-section-label">Full Scope of Service</div>' +
+        '<div class="detail-section-title">Full Service Coverage</div>' +
+        '<p class="detail-section-text" style="margin-bottom:32px;">Every item below falls within this service. If your need is listed here, it is in scope.</p>' +
+        '<div class="detail-categories">' + categoriesHTML + '</div>' +
+        '<div class="detail-section-label">How We Work</div>' +
+        '<div class="detail-section-title">Our Process</div>' +
+        '<div class="process-steps">' + processHTML + '</div>';
+
+      // Show page
+      const page = document.getElementById('service-detail-page');
+      page.classList.add('active');
+      page.scrollTo(0, 0);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeService() {
+      const page = document.getElementById('service-detail-page');
+      page.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeService();
+    });
+  </script>
+
+</body>
+</html>
