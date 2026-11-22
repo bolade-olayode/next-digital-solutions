@@ -1,0 +1,52 @@
+# Environment variables and local configuration
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.local
+
+# Credentials, private keys, and local cloud configuration
+.aws/
+.ssh/
+.credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+credentials.json
+credentials-*.json
+service-account*.json
+service_account*.json
+
+# Store sensitive documents in these folders, never alongside public assets.
+/private/
+/secrets/
+/confidential/
+/local/
+
+# Dependencies and generated output
+node_modules/
+/dist/
+/build/
+/.next/
+/out/
+/coverage/
+/.cache/
+/.vercel/
+/.netlify/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Operating system files
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
